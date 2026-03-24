@@ -1,0 +1,15 @@
+# VS Code
+.vscode/
+# except for specific shared configuration files (optional)
+!.vscode/settings.json 
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Dependencies
+node_modules/
+bin/
+obj/
+
+# Environment variables
+.env
