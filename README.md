@@ -8,3 +8,7 @@
 ##### sudo modprobe vkms
 3. Запуск виртуального дисплея
 ##### sudo ffplay -f fbdev /dev/fb0
+
+### Запуск проекта
+1. cmake -B build
+2. cmake --build build -j$(nproc)
