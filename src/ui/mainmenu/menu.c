@@ -58,12 +58,14 @@ static lv_obj_t * create_standard_container(lv_obj_t * parent, int width, int he
 // Функция для создания стандартной страницы меню
 static lv_obj_t * create_menu_page(lv_obj_t * menu, const char * title) {
     lv_obj_t * page = lv_menu_page_create(menu, title);
-    apply_bw_theme(page);
+
+    lv_obj_t * back_btn = lv_menu_get_main_header_back_button(menu);
+    lv_obj_t * label = lv_obj_get_child(back_btn, 0);
+    lv_label_set_text(label, "<");
     
-    // Отключаем прокрутку страницы
     lv_obj_remove_flag(page, LV_OBJ_FLAG_SCROLLABLE);
     lv_obj_set_scroll_dir(page, LV_DIR_NONE);
-    
+       
     return page;
 }
 

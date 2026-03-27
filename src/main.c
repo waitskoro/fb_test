@@ -41,13 +41,11 @@ static void indev_deleted_cb(lv_event_t * e)
 
 static void set_mouse_cursor_icon(lv_indev_t * indev, lv_display_t * display)
 {
-    /* Set the cursor icon */
     LV_IMAGE_DECLARE(mouse_cursor_icon);
     lv_obj_t * cursor_obj = lv_image_create(lv_display_get_screen_active(display));
     lv_image_set_src(cursor_obj, &mouse_cursor_icon);
     lv_indev_set_cursor(indev, cursor_obj);
 
-    /* delete the mouse cursor icon if the device is removed */
     lv_indev_add_event_cb(indev, indev_deleted_cb, LV_EVENT_DELETE, cursor_obj);
 }
 
